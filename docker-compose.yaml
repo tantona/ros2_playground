@@ -1,0 +1,25 @@
+services:
+  novnc:
+    image: theasp/novnc:latest
+    platform: linux/amd64
+    networks:
+      - ros
+    environment:
+      DISPLAY_WIDTH: 3000
+      DISPLAY_HEIGHT: 1800
+      RUN_XTERM: "no"
+    ports:
+      - 8080:8080
+  ros_master:
+    container_name: ros2
+    tty: true
+    build: .
+    platform: linux/amd64
+    environment:
+      DISPLAY: novnc:0.0
+      SHELL: /bin/bash
+    networks:
+      - ros
+
+networks:
+  ros:
