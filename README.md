@@ -6,7 +6,7 @@
 docker compose up
 ```
 
-2. Open up your browser to `http://localhost:8080/vnc.html`
+2. Open up your browser to `http://localhost:8080/vnc.html` and click "connect"
 
 3. In another terminal, start the turtlesim_node.
 
